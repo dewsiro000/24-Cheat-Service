@@ -13,11 +13,11 @@
   "routes": [
     {
       "src": "/routes/v1/(.*)",
-      "dest": "/backend/routes/$1"
+      "dest": "src/backend/routes/v1/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "src/frontend/$1"
     }
   ]
 }
