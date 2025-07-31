@@ -7,7 +7,7 @@ import Token from "@/models/token";
 import type { Request, Response } from "express";
 import config from "@/config";
 
-const logout = async (req: Request, res: Response): Promise<void> => {
+const signout = async (req: Request, res: Response): Promise<void> => {
   try {
     const refreshToken = req.cookies.refreshToken as string;
 
@@ -32,7 +32,7 @@ const logout = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export default logout;
+export default signout;
 
 const deleteToken = async (refreshToken: string): Promise<void> => {
   try {

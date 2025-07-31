@@ -1,10 +1,10 @@
 import { Router } from "express";
 
 /* controllers */
-import register from "@/controllers/v1/auth/register";
-import login from "@/controllers/v1/auth/login";
+import signup from "@/controllers/v1/auth/register";
+import signin from "@/controllers/v1/auth/login";
 import refreshToken from "@/controllers/v1/auth/refresh_token";
-import logout from "@/controllers/v1/auth/logout";
+import signout from "@/controllers/v1/auth/logout";
 
 /*Middlewares*/
 import validationError from "@/middlewares/validationError";
@@ -22,20 +22,20 @@ router.post(
   "/signup",
   registerValidation,
   validationError,
-  register
+  signup
 );
 
 router.post(
   "/signin",
   loginValidation,
   validationError,
-  login
+  signin
 );
 
 router.post(
   "/signout",
   authenticate,
-  logout,
+  signout,
 )
 
 router.post(

@@ -13,7 +13,7 @@ import type { IUser } from '@/models/user'
 
 type UserData = Pick<IUser, 'email' | 'password' | 'username'>
 
-const register = async(req: Request, res: Response): Promise<void> => {
+const signup = async(req: Request, res: Response): Promise<void> => {
   try {
     const { email, password, username } = req.body as UserData;
 		
@@ -63,4 +63,4 @@ const register = async(req: Request, res: Response): Promise<void> => {
   }
 }
 
-export default register;
+export default signup;

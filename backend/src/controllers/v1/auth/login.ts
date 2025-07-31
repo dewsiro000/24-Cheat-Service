@@ -13,7 +13,7 @@ import type { IUser } from "@/models/user";
 
 type UserData = Pick<IUser, "email" | "password">;
 
-const login = async (req: Request, res: Response): Promise<void> => {
+const signin = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email } = req.body as UserData;
 
@@ -73,4 +73,4 @@ const login = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export default login;
+export default signin;
