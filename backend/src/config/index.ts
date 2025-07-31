@@ -7,7 +7,7 @@ dotenv.config();
 const config: Config = {
   PORT: parseInt(process.env.PORT || '3000', 10),
   NODE_ENV: process.env.NODE_ENV,
-  WHITELIST_ORIGINS: ['http://localhost:5173',"https://24-cheat-service.vercel.app"], 
+  WHITELIST_ORIGINS: ['http://localhost:5173',"https://24-cheat-service.vercel.app", "24-cheat-service-hh2h.vercel.app"], 
   MONGO_URI: process.env.MONGO_URI,
   LOG_LEVEL: process.env.LOG_LEVEL || 'info', 
   JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET!,
