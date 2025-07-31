@@ -23,7 +23,7 @@ dotenv.config();
 const app = express();
 // app.use(cors(corsOptions));
 app.use(cors({
-  origin: '*', // หรือระบุเฉพาะโดเมนที่อนุญาต
+  origin: ['https://24-cheat-service-hh2h.vercel.app','https://24-cheat-service-hh2h.vercel.app'], // หรือระบุเฉพาะโดเมนที่อนุญาต
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,  // ถ้าคุณใช้ cookies
