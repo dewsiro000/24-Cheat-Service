@@ -13,7 +13,7 @@ import {
 } from "@/lib/mongoose";
 import limiter from "@/lib/express_rate_limit";
 import { logger } from "@/lib/winston";
-import corsOptions from "@/lib/corsOptions";
+// import corsOptions from "@/lib/corsOptions";
 
 import config from "@/config";
 import v1Routes from "@/routes/v1"
@@ -21,7 +21,8 @@ import v1Routes from "@/routes/v1"
 dotenv.config();
 
 const app = express();
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(helmet());
