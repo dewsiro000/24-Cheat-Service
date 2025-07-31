@@ -18,16 +18,16 @@ import v1Routes from "@/routes/v1";
 dotenv.config();
 
 const app = express();
-// app.use(cors(corsOptions));
-app.use(
-  cors({
-    origin: [
-      "https://24-cheat-service-hh2h.vercel.app",
-    ], 
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true, // ถ้าคุณใช้ cookies
-  })
-);
+app.use(cors(corsOptions));
+// app.use(
+//   cors({
+//     origin: [
+//       "https://24-cheat-service-hh2h.vercel.app",
+//     ], 
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     credentials: true, // ถ้าคุณใช้ cookies
+//   })
+// );
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());

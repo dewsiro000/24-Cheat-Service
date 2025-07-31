@@ -10,7 +10,6 @@ const config: Config = {
   WHITELIST_ORIGINS: [
     "http://localhost:5173",
     "https://24-cheat-service.vercel.app",
-    "https://24-cheat-service-hh2h.vercel.app",
   ],
   MONGO_URI: process.env.MONGO_URI,
   LOG_LEVEL: process.env.LOG_LEVEL || "info",
