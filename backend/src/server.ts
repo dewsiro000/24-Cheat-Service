@@ -1,35 +1,37 @@
 import "module-alias/register";
-import express  from "express";
+import express from "express";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
-import morgan from 'morgan'; 
+import morgan from "morgan";
 
-import { 
-  connectToDatabase, 
-  disconnectFromDatabase 
-} from "@/lib/mongoose";
+import { connectToDatabase, disconnectFromDatabase } from "@/lib/mongoose";
 import limiter from "@/lib/express_rate_limit";
 import { logger } from "@/lib/winston";
 import corsOptions from "@/lib/corsOptions";
 
 import config from "@/config";
-import v1Routes from "@/routes/v1"
+import v1Routes from "@/routes/v1";
 
 dotenv.config();
 
 const app = express();
 // app.use(cors(corsOptions));
-app.use(cors({
-  origin: ['https://24-cheat-service-hh2h.vercel.app','https://24-cheat-service.vercel.app'], // หรือระบุเฉพาะโดเมนที่อนุญาต
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,  // ถ้าคุณใช้ cookies
-}));
+app.use(
+  cors({
+    origin: [
+      "https://24-cheat-service-hh2h.vercel.app/",
+      "https://24-cheat-service.vercel.app/",
+    ], // หรือระบุเฉพาะโดเมนที่อนุญาต
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // ถ้าคุณใช้ cookies
+  })
+);
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(helmet());
 app.use(cookieParser());
 app.use(limiter);
