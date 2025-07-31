@@ -10,24 +10,24 @@ import morgan from "morgan";
 import { connectToDatabase, disconnectFromDatabase } from "@/lib/mongoose";
 import limiter from "@/lib/express_rate_limit";
 import { logger } from "@/lib/winston";
-import corsOptions from "@/lib/corsOptions";
+// import corsOptions from "@/lib/corsOptions";
 
 import config from "@/config";
 import v1Routes from "@/routes/v1";
 
 dotenv.config();
 
+const corsOptions = [
+  cors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+];
+
 const app = express();
 app.use(cors(corsOptions));
-// app.use(
-//   cors({
-//     origin: [
-//       "https://24-cheat-service-hh2h.vercel.app",
-//     ], 
-//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//     credentials: true, // ถ้าคุณใช้ cookies
-//   })
-// );
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
