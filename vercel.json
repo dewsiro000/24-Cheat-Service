@@ -12,8 +12,8 @@
   ],
   "routes": [
     {
-      "src": "/routes/api/v1/(.*)",
-      "dest": "backend/routes/api/auth/v1/$1"
+      "src": "/(.*)",
+      "dest": "backend/$1"
     },
     {
       "src": "/(.*)",
