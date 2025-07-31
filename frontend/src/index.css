@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+.hero-section {
+  @apply flex flex-col justify-center items-center text-center p-6 md:p-12 text-gray-600 bg-contain md:bg-cover h-[400px] md:h-[400px];
+  background-image: url('/header_img.png');
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out; 
+}
