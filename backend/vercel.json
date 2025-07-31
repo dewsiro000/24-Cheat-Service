@@ -7,11 +7,11 @@
         },
         {
             "src": "src/**/**",
-            "use": "@vercel/static"
+            "use": "@vercel/static" 
         }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "server.ss",
+        { "src": "/(.*)", "dest": "server.ts",
           "headers": {
             "Access-Control-Allow-Origin": "*"
           }
