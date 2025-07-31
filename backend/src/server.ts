@@ -13,7 +13,7 @@ import {
 } from "@/lib/mongoose";
 import limiter from "@/lib/express_rate_limit";
 import { logger } from "@/lib/winston";
-// import corsOptions from "@/lib/corsOptions";
+import corsOptions from "@/lib/corsOptions";
 
 import config from "@/config";
 import v1Routes from "@/routes/v1"
@@ -22,7 +22,12 @@ dotenv.config();
 
 const app = express();
 // app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors({
+  origin: '*', // หรือระบุเฉพาะโดเมนที่อนุญาต
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,  // ถ้าคุณใช้ cookies
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(helmet());
