@@ -10,21 +10,12 @@ import morgan from "morgan";
 import { connectToDatabase, disconnectFromDatabase } from "@/lib/mongoose";
 import limiter from "@/lib/express_rate_limit";
 import { logger } from "@/lib/winston";
-// import corsOptions from "@/lib/corsOptions";
+import corsOptions from "@/lib/corsOptions";
 
 import config from "@/config";
 import v1Routes from "@/routes/v1";
 
 dotenv.config();
-
-const corsOptions = [
-  cors({
-    origin: '*',
-    methods: '*',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  })
-];
 
 const app = express();
 app.use(cors(corsOptions));
