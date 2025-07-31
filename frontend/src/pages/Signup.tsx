@@ -32,11 +32,11 @@ const Signup: React.FC = () => {
     e.preventDefault();
 
     if (!formData.email.includes("@")) {
-      alert("Please enter a valid email");
+      toast.error("Please enter a valid email");
       return;
     }
     if (formData.password.length < 8) {
-      alert("Password must be at least 8 characters long");
+      toast.error("Password must be at least 8 characters long");
       return;
     }
 

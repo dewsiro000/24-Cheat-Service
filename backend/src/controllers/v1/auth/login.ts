@@ -43,7 +43,7 @@ const login = async (req: Request, res: Response): Promise<void> => {
       httpOnly: true,
       secure: config.NODE_ENV !== "production",
       sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 30 * 1000, // 30 days in milliseconds
+      maxAge: 60 * 60 * 24 * 30 * 1000, 
     });
 
     res.cookie("accessToken", accessToken, {

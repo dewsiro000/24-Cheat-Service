@@ -4,7 +4,6 @@ import { logger } from "@/lib/winston";
 import calculateSolutions from "@/services/answerService";
 
 /*Models*/
-import User from "@/models/user";
 import Answer from "@/models/answer";
 
 /*Types*/
@@ -38,29 +37,7 @@ export const getAnswers = async (
       return res.json(answer);
     }
   } catch (err) {
-    console.error(err);
+    logger.error.error(err);
     res.status(500).json({ message: "Error retrieving answers." });
-  }
-};
-
-export const getCurrentUser = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const userId = req.userId;
-
-    const user = await User.findById(userId).select("-__v").lean().exec();
-
-    res.status(200).json({
-      user,
-    });
-  } catch (err) {
-    res.status(500).json({
-      code: "ServerError",
-      message: "Internal server error",
-      error: err,
-    });
-    logger.error("Error while getting current user", err);
   }
 };

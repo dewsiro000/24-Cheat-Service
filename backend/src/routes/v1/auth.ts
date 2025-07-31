@@ -1,5 +1,4 @@
 import { Router } from "express";
-const { validationResult } = require('express-validator');
 
 /* controllers */
 import register from "@/controllers/v1/auth/register";
