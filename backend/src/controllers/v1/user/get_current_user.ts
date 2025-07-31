@@ -37,7 +37,7 @@ export const getAnswers = async (
       return res.json(answer);
     }
   } catch (err) {
-    logger.error.error(err);
+    logger.error(err);
     res.status(500).json({ message: "Error retrieving answers." });
   }
 };
