@@ -136,6 +136,7 @@ Frontend ของโปรเจกต์จะประกอบด้วย 4
 2. เปิด **Command Line** (Terminal, Git Bash) แล้วไปที่ไดเรกทอรีหลักของโปรเจกต์
 3. รันคำสั่งต่อไปนี้เพื่อ **Build** และเริ่ม **Service** ทั้งหมดตามโฟลเดอร์ Fronend แลพ  Backend:
    โดยใช้คำสั่งรันเหมือนกันคือ
+   
    ```bash
    docker-compose up --build
 
@@ -145,6 +146,6 @@ npm run dev
 
 #### Backend:
 - npm install
-- npm install @types/
+- npm install @types/<modules>
 - npm run dev
-- DB Connection Port: set .env
+- DB Connection Port: in set .env file.
