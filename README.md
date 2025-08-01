@@ -141,8 +141,8 @@ Frontend ของโปรเจกต์จะประกอบด้วย 4
    docker-compose up --build
 
 #### Frontend
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 #### Backend:
 - npm install
